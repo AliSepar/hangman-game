@@ -19,21 +19,55 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container mx-auto my-5 bg-white p-5 rounded-4">
+    <main class="container mx-auto my-5 bg-white rounded-4 w-75">
+      <div
+        class="modal"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body text-center game-modal">
+              <img src="images/lost.gif" alt="Gif" />
+              <h4>Game Over</h4>
+              <p>The correct Word was: <b></b></p>
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                class="btn btn-primary"
+                id="playagain"
+              >
+                Play Again
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row p-4">
-        <section class="col-6">
-          <img src="images/hangman-0.svg" alt="image" />
+        <section
+          class="col-12 col-lg-5 col-md-12 align-content-center d-sm-flex flex-sm-column align-items-sm-center justify-content-sm-center"
+        >
+          <img src="images/hangman-0.svg" id="hangman-img" alt="image" />
           <h1 class="mt-4">Hangman Game</h1>
         </section>
-        <section class="col-6">
+        <section class="col-12 col-lg-7 col-md-12 d-flex flex-column pt-4">
           <ul class="word-dysplayed"></ul>
-          <h4 class="hint-text">Hint: <b></b></h4>
-          <h4 class="guesses-text text-center">Incorrect guesses: <b></b></h4>
-          <div class="keyboard"></div>
+          <h4 class="hint-text fs-6">Hint: <b></b></h4>
+          <h4 class="guesses-text text-center fs-6 mt-3">
+            Incorrect guesses: <b class="text-danger"></b>
+          </h4>
+          <div
+            class="keyboard d-flex justify-content-center g-1 flex-wrap mt-3"
+          ></div>
         </section>
       </div>
     </main>
-    <script src="word-list.js"></script>
-    <script src="app.js"></script>
+    <script src="word-list.js" defer></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
